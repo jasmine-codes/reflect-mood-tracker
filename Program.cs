@@ -19,4 +19,11 @@ class Program
     static string filePath = "entries.json";
     static List<JournalEntry> entries = new List<JournalEntry>();
     static string? input;
+
+    static void Main()
+    {
+        Console.Clear();
+        entries = LoadEntries();
+        Console.WriteLine("Welcome to Reflect - Mood Journal");
+    }
 }
