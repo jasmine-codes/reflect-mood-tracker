@@ -25,5 +25,22 @@ class Program
         Console.Clear();
         entries = LoadEntries();
         Console.WriteLine("Welcome to Reflect - Mood Journal");
+        Console.WriteLine();
+
+        while (true)
+        {
+            Console.WriteLine("Main Menu:");
+            Console.WriteLine("1) Add Entry");
+            Console.WriteLine("2)View Entries");
+            Console.WriteLine("3) View Entries - by Date");
+            Console.WriteLine("4)View Entries - by Tag");
+            Console.WriteLine("5) Edit Entry");
+            Console.WriteLine("6) Delete Entry");
+            Console.WriteLine("7) Statistics");
+            Console.WriteLine("8) Export Entries (text)");
+            Console.WriteLine("9) Reset Storage (delete all)");
+            Console.WriteLine("0) Exit");
+            Console.Write("Choose an option: ");
+        }
     }
 }
