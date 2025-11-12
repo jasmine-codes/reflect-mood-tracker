@@ -41,6 +41,24 @@ class Program
             Console.WriteLine("9) Reset Storage (delete all)");
             Console.WriteLine("0) Exit");
             Console.Write("Choose an option: ");
+            input = Console.ReadLine();
+
+            Console.WriteLine();
+
+            switch (input)
+            {
+                case "1": AddEntry(); break;
+                case "2": ViewAllEntries(); break;
+                case "3": 
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case "0":
+                default:
+            }
         }
     }
 }
