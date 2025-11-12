@@ -49,16 +49,21 @@ class Program
             {
                 case "1": AddEntry(); break;
                 case "2": ViewAllEntries(); break;
-                case "3": 
-                case "4":
-                case "5":
-                case "6":
-                case "7":
-                case "8":
-                case "9":
-                case "0":
-                default:
+                case "3": ViewByDate(); break;
+                case "4": ViewByTag(); break;
+                case "5": EditEntry(); break;
+                case "6": DeleteEntry(); brea;
+                case "7": ShowStats(); break;
+                case "8": ExportEntries(); break;
+                case "9": ResetStorage(); break;
+                case "0": SaveEntries(); Console.WriteLine("Saved. Bye!"); return;
+                default: Console.WriteLine("Invalid choice."); break;
             }
+
+            Console.WriteLine("");
         }
     }
+
+    #region Persistence
+    #endregion
 }
