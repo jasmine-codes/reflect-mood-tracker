@@ -13,3 +13,10 @@ public class JournalEntry
     public string Notes { get; set; }
     public List<string> Tags { get; set; } = new List<string>();
 }
+
+class Program
+{
+    static string filePath = "entries.json";
+    static List<JournalEntry> entries = new List<JournalEntry>();
+    static string? input;
+}
