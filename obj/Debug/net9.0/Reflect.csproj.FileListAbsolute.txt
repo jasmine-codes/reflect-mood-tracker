@@ -1,0 +1,5 @@
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.AssemblyInfoInputs.cache
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.AssemblyInfo.cs
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.csproj.CoreCompileInputs.cache
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.sourcelink.json

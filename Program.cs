@@ -65,5 +65,14 @@ class Program
     }
 
     #region Persistence
+
+    static List<JournalEntry> LoadEntries()
+    {
+        try
+        {
+            if (!File.Exists(filePath)) return new List<JournalEntry>();
+        }
+    }
+
     #endregion
 }
