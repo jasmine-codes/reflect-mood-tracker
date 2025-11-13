@@ -75,6 +75,11 @@ class Program
             var list = JsonSerializer.Deserialize<List<JournalEntry>>(json);
             return list ?? new List<JournalEntry>();
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading entries: {ex.Message}");
+            return new List<JournalEntry>();
+        }
     }
 
     #endregion
