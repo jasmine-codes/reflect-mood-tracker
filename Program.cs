@@ -52,7 +52,7 @@ class Program
                 case "3": ViewByDate(); break;
                 case "4": ViewByTag(); break;
                 case "5": EditEntry(); break;
-                case "6": DeleteEntry(); brea;
+                case "6": DeleteEntry(); break;
                 case "7": ShowStats(); break;
                 case "8": ExportEntries(); break;
                 case "9": ResetStorage(); break;
@@ -79,6 +79,15 @@ class Program
         {
             Console.WriteLine($"Error loading entries: {ex.Message}");
             return new List<JournalEntry>();
+        }
+    }
+
+    static void SaveEntries()
+    {
+        try
+        {
+            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions {writeIndented = true});
+            File.WriteAllText();
         }
     }
 
