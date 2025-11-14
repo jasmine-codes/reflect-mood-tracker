@@ -90,6 +90,10 @@ class Program
             File.WriteAllText(filePath, json);
         }
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error saving entries: {ex.Message}");
+    }
 
     #endregion
 }
