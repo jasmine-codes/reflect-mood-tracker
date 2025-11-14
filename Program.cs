@@ -87,7 +87,7 @@ class Program
         try
         {
             var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions {writeIndented = true});
-            File.WriteAllText();
+            File.WriteAllText(filePath, json);
         }
     }
 
