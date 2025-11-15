@@ -98,7 +98,12 @@ class Program
     static void ResetStorage()
     {
         Console.Write("Are you sure you want to delete all entries? (y/n): ");
-        
+        var confirm = Console.ReadLine()?.ToLower();
+
+        if (confirm == "y")
+        {
+            
+        }
     }
 
     #endregion
