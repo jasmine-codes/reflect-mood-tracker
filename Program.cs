@@ -102,7 +102,9 @@ class Program
 
         if (confirm == "y")
         {
-            
+            if (File.Exists(filePath)) File.Delete(filePath);
+            entries.Clear();
+            Console.WriteLine("All entries deleted.");
         }
     }
 
