@@ -106,6 +106,10 @@ class Program
             entries.Clear();
             Console.WriteLine("All entries deleted.");
         }
+        else
+        {
+            Console.WriteLine("Reset cancelled.");
+        }
     }
 
     #endregion
