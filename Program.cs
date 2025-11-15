@@ -95,5 +95,11 @@ class Program
         Console.WriteLine($"Error saving entries: {ex.Message}");
     }
 
+    static void ResetStorage()
+    {
+        Console.Write("Are you sure you want to delete all entries? (y/n): ");
+        
+    }
+
     #endregion
 }
