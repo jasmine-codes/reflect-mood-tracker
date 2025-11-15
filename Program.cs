@@ -113,4 +113,15 @@ class Program
     }
 
     #endregion
+
+    #region CRUD and View
+
+    static void AddEntry()
+    {
+        var e = new JournalEntry();
+
+        Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
+    }
+
+    #endregion
 }
