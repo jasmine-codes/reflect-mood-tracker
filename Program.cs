@@ -121,6 +121,12 @@ class Program
         var e = new JournalEntry();
 
         Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
+        var dateInput = Console.ReadLine()?;
+
+        if (!string.IsNullOrWhiteSpace(dateInput))
+        {
+            if (DateTime.TryParse(dateInput, out DateTime parsedDate))
+        }
     }
 
     #endregion
