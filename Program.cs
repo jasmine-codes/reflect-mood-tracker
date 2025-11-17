@@ -120,13 +120,24 @@ class Program
     {
         var e = new JournalEntry();
 
+        //Date - optional
         Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
         var dateInput = Console.ReadLine()?;
 
         if (!string.IsNullOrWhiteSpace(dateInput))
         {
             if (DateTime.TryParse(dateInput, out DateTime parsedDate))
+            {
+                e.Date = parsedDate;
+            }
+            else
+            {
+                Console.WriteLine("Invalid date - using today");
+            }
         }
+
+        //Mood
+        
     }
 
     #endregion
