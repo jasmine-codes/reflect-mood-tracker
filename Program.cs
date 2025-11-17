@@ -86,7 +86,7 @@ class Program
     {
         try
         {
-            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions {writeIndented = true});
+            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { writeIndented = true });
             File.WriteAllText(filePath, json);
         }
     }
@@ -95,50 +95,52 @@ class Program
         Console.WriteLine($"Error saving entries: {ex.Message}");
     }
 
-    static void ResetStorage()
-    {
-        Console.Write("Are you sure you want to delete all entries? (y/n): ");
-        var confirm = Console.ReadLine()?.ToLower();
+static void ResetStorage()
+{
+    Console.Write("Are you sure you want to delete all entries? (y/n): ");
+    var confirm = Console.ReadLine()?.ToLower();
 
-        if (confirm == "y")
+    if (confirm == "y")
+    {
+        if (File.Exists(filePath)) File.Delete(filePath);
+        entries.Clear();
+        Console.WriteLine("All entries deleted.");
+    }
+    else
+    {
+        Console.WriteLine("Reset cancelled.");
+    }
+}
+
+#endregion
+
+#region CRUD and View
+
+static void AddEntry()
+{
+    var e = new JournalEntry();
+
+    //Date - optional
+    Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
+    var dateInput = Console.ReadLine() ?;
+
+    if (!string.IsNullOrWhiteSpace(dateInput))
+    {
+        if (DateTime.TryParse(dateInput, out DateTime parsedDate))
         {
-            if (File.Exists(filePath)) File.Delete(filePath);
-            entries.Clear();
-            Console.WriteLine("All entries deleted.");
+            e.Date = parsedDate;
         }
         else
         {
-            Console.WriteLine("Reset cancelled.");
+            Console.WriteLine("Invalid date - using today");
         }
     }
 
-    #endregion
-
-    #region CRUD and View
-
-    static void AddEntry()
+    //Mood
+    while (true)
     {
-        var e = new JournalEntry();
-
-        //Date - optional
-        Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
-        var dateInput = Console.ReadLine()?;
-
-        if (!string.IsNullOrWhiteSpace(dateInput))
-        {
-            if (DateTime.TryParse(dateInput, out DateTime parsedDate))
-            {
-                e.Date = parsedDate;
-            }
-            else
-            {
-                Console.WriteLine("Invalid date - using today");
-            }
-        }
-
-        //Mood
         Console.Write("Mood (1-10): ");
-        var moodInput = Console.ReadLine()?;
+        var moodInput = Console.ReadLine() ?;
 
         if (int.TryParse(moodInput, out int mood) && mood >= 1 && mood <= 10)
         {
@@ -148,6 +150,10 @@ class Program
 
         Console.WriteLine("Please enter a number from 1 to 10.");
     }
+
+    
+
+}
 
     #endregion
 }
