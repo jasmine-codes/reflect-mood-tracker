@@ -137,7 +137,10 @@ class Program
         }
 
         //Mood
-        
+        Console.Write("Mood (1-10): ");
+        var moodInput = Console.ReadLine()?;
+
+        if (int.TryParse(moodInput, out int mood) && mood >= 1 && mood <= 10)
     }
 
     #endregion
