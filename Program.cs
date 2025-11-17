@@ -141,6 +141,12 @@ class Program
         var moodInput = Console.ReadLine()?;
 
         if (int.TryParse(moodInput, out int mood) && mood >= 1 && mood <= 10)
+        {
+            e.Mood = mood;
+            break;
+        }
+
+        Console.WriteLine("Please enter a number from 1 to 10.");
     }
 
     #endregion
