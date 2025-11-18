@@ -89,86 +89,89 @@ class Program
             var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { writeIndented = true });
             File.WriteAllText(filePath, json);
         }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error saving entries: {ex.Message}");
-    }
-
-static void ResetStorage()
-{
-    Console.Write("Are you sure you want to delete all entries? (y/n): ");
-    var confirm = Console.ReadLine()?.ToLower();
-
-    if (confirm == "y")
-    {
-        if (File.Exists(filePath)) File.Delete(filePath);
-        entries.Clear();
-        Console.WriteLine("All entries deleted.");
-    }
-    else
-    {
-        Console.WriteLine("Reset cancelled.");
-    }
-}
-
-#endregion
-
-#region CRUD and View
-
-static void AddEntry()
-{
-    var e = new JournalEntry();
-
-    //Date - optional
-    Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
-    var dateInput = Console.ReadLine() ?;
-
-    if (!string.IsNullOrWhiteSpace(dateInput))
-    {
-        if (DateTime.TryParse(dateInput, out DateTime parsedDate))
+        catch (Exception ex)
         {
-            e.Date = parsedDate;
+            Console.WriteLine($"Error saving entries: {ex.Message}");
+        }
+    }
+
+
+    static void ResetStorage()
+    {
+        Console.Write("Are you sure you want to delete all entries? (y/n): ");
+        var confirm = Console.ReadLine()?.ToLower();
+
+        if (confirm == "y")
+        {
+            if (File.Exists(filePath)) File.Delete(filePath);
+            entries.Clear();
+            Console.WriteLine("All entries deleted.");
         }
         else
         {
-            Console.WriteLine("Invalid date - using today");
+            Console.WriteLine("Reset cancelled.");
         }
     }
 
-    //Mood
-    while (true)
+    #endregion
+
+    #region CRUD and View
+
+    static void AddEntry()
     {
-        Console.Write("Mood (1-10): ");
-        var moodInput = Console.ReadLine() ?;
+        var e = new JournalEntry();
 
-        if (int.TryParse(moodInput, out int mood) && mood >= 1 && mood <= 10)
+        //Date - optional
+        Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
+        var dateInput = Console.ReadLine() ?;
+
+        if (!string.IsNullOrWhiteSpace(dateInput))
         {
-            e.Mood = mood;
-            break;
+            if (DateTime.TryParse(dateInput, out DateTime parsedDate))
+            {
+                e.Date = parsedDate;
+            }
+            else
+            {
+                Console.WriteLine("Invalid date - using today");
+            }
         }
 
-        Console.WriteLine("Please enter a number from 1 to 10.");
+        //Mood
+        while (true)
+        {
+            Console.Write("Mood (1-10): ");
+            var moodInput = Console.ReadLine() ?;
+
+            if (int.TryParse(moodInput, out int mood) && mood >= 1 && mood <= 10)
+            {
+                e.Mood = mood;
+                break;
+            }
+
+            Console.WriteLine("Please enter a number from 1 to 10.");
+        }
+
+        //Title
+        Console.Write("Title (short): ");
+        e.Title = Console.ReadLine() ?? "";
+
+        //Notes
+        Console.Write("Notes (you can hit Enter to skip): ");
+        e.Notes = Console.Readline() ?? "";
+
+        //Tags
+        Console.Write("Tags (comma separated, optional): ");
+        var tags = Console.ReadLine() ?;
+
+        if (!string.IsNullOrWhiteSpace(tags)) e.Tags = tags.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
+
+        entries.Add(e);
+        SaveEntries();
+        Console.WriteLine("Entry added!");
+        Console.WriteLine("Press Enter to continue");
+        Console.ReadLine();
     }
-
-    //Title
-    Console.Write("Title (short): ");
-    e.Title = Console.ReadLine() ?? "";
-
-    //Notes
-    Console.Write("Notes (you can hit Enter to skip): ");
-    e.Notes = Console.Readline() ?? "";
-
-    //Tags
-    Console.Write("Tags (comma separated, optional): ");
-    var tags = Console.ReadLine()?;
-
-    if (!string.IsNullOrWhiteSpace(tags)) e.Tags = tags.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
-
-    entries.Add(e);
-    
-
-}
 
     #endregion
 }
