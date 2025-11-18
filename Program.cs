@@ -155,7 +155,9 @@ static void AddEntry()
     Console.Write("Title (short): ");
     e.Title = Console.ReadLine() ?? "";
 
-    
+    //Notes
+    Console.Write("Notes (you can hit Enter to skip): ");
+    e.Notes = Console.Readline() ?? "";
 
 }
 
