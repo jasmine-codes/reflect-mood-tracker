@@ -159,6 +159,12 @@ static void AddEntry()
     Console.Write("Notes (you can hit Enter to skip): ");
     e.Notes = Console.Readline() ?? "";
 
+    //Tags
+    Console.Write("Tags (comma separated, optional): ");
+    var tags = Console.ReadLine()?;
+
+    if (!string.IsNullOrWhiteSpace(tags)) e.Tags = ;
+
 }
 
     #endregion
