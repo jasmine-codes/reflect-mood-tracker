@@ -151,6 +151,10 @@ static void AddEntry()
         Console.WriteLine("Please enter a number from 1 to 10.");
     }
 
+    //Title
+    Console.Write("Title (short): ");
+    e.Title = Console.ReadLine() ?? "";
+
     
 
 }
