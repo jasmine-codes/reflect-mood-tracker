@@ -163,7 +163,10 @@ static void AddEntry()
     Console.Write("Tags (comma separated, optional): ");
     var tags = Console.ReadLine()?;
 
-    if (!string.IsNullOrWhiteSpace(tags)) e.Tags = ;
+    if (!string.IsNullOrWhiteSpace(tags)) e.Tags = tags.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
+
+    entries.Add(e);
+    
 
 }
 
