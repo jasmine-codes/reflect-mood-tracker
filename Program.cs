@@ -183,7 +183,7 @@ class Program
         }
 
         var sorted = entries.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id).ToList();
-
+        PrintEntriesList(sorted); //helper method -> to be implemented
     }
 
     #endregion
