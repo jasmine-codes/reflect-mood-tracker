@@ -182,7 +182,8 @@ class Program
             return;
         }
 
-        
+        var sorted = entries.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id).ToList();
+
     }
 
     #endregion
