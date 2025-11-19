@@ -175,6 +175,13 @@ class Program
 
     static void ViewAllEntries()
     {
+        if (!entries.Any())
+        {
+            Console.WriteLine("No entries yet.");
+            Console.ReadLine();
+            return;
+        }
+
         
     }
 
