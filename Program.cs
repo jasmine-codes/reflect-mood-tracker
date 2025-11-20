@@ -186,5 +186,10 @@ class Program
         PrintEntriesList(sorted); //helper method -> to be implemented
     }
 
+    static void ViewByDate()
+    {
+        Console.Write("Enter date (YYYY-MM-DD) or range (YYYY-MM-DD to YYYY-MM-DD): ");
+    }
+
     #endregion
 }
