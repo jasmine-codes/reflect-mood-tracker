@@ -199,6 +199,11 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        if (s.Contains("to"))
+        {
+            var parts = s.Split("to", StringSplitOptions.RemoveEmptyEntries).Select(parts => parts.Trim()).ToArray();
+        }
     }
 
     #endregion
