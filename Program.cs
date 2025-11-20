@@ -178,6 +178,7 @@ class Program
         if (!entries.Any())
         {
             Console.WriteLine("No entries yet.");
+            Console.WriteLine();
             Console.ReadLine();
             return;
         }
@@ -189,6 +190,15 @@ class Program
     static void ViewByDate()
     {
         Console.Write("Enter date (YYYY-MM-DD) or range (YYYY-MM-DD to YYYY-MM-DD): ");
+        var s = Console.ReadLine()?;
+
+        if (string.IsNullOrWhiteSpace(s))
+        {
+            Console.WriteLine("Nothing entered.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
