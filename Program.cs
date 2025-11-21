@@ -203,6 +203,10 @@ class Program
         if (s.Contains("to"))
         {
             var parts = s.Split("to", StringSplitOptions.RemoveEmptyEntries).Select(parts => parts.Trim()).ToArray();
+
+            if (parts.Length == 2 &&
+            DateTime.TryParse(parts[0], out DateTime d1) &&
+            DateTime.TryParse([parts[1], out DateTime d2]))
         }
     }
 
