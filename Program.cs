@@ -206,7 +206,10 @@ class Program
 
             if (parts.Length == 2 &&
             DateTime.TryParse(parts[0], out DateTime d1) &&
-            DateTime.TryParse([parts[1], out DateTime d2]))
+            DateTime.TryParse(parts[1], out DateTime d2))
+            {
+                var list = entries.Where(en => en.Date.Date >= d1.Date && en.Date.Date <= d2.Date).OrderByDescending(e => e.Date).ToList();
+            }
         }
     }
 
