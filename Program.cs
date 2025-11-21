@@ -184,7 +184,7 @@ class Program
         }
 
         var sorted = entries.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id).ToList();
-        PrintEntriesList(sorted); //helper method -> to be implemented
+        PrintEntriesList(sorted);
     }
 
     static void ViewByDate()
@@ -209,7 +209,14 @@ class Program
             DateTime.TryParse(parts[1], out DateTime d2))
             {
                 var list = entries.Where(en => en.Date.Date >= d1.Date && en.Date.Date <= d2.Date).OrderByDescending(e => e.Date).ToList();
+                PrintEntriesList(list);
+                return;
             }
+
+            Console.WriteLine("Invalid range format.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
         }
     }
 
