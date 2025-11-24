@@ -222,7 +222,7 @@ class Program
         {
             if (DateTime.TryParse(s, out DateTime d))
             {
-                
+                var list = entries.Where(en => en.Date.Date == d.Date);
             }
         }
     }
