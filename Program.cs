@@ -222,7 +222,11 @@ class Program
         {
             if (DateTime.TryParse(s, out DateTime d))
             {
-                var list = entries.Where(en => en.Date.Date == d.Date);
+                var list = entries.Where(en => en.Date.Date == d.Date).OrderByDescending(e => e.Date).ToList();
+                PrintEntriesList(list);
+                Console.WriteLine();
+                Console.ReadLine();
+                return;
             }
         }
     }
