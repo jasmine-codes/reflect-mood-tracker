@@ -228,6 +228,11 @@ class Program
                 Console.ReadLine();
                 return;
             }
+
+            Console.WriteLine("Invalid date format.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
         }
     }
 
