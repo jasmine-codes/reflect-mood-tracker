@@ -218,6 +218,13 @@ class Program
             Console.ReadLine();
             return;
         }
+        else
+        {
+            if (DateTime.TryParse(s, out DateTime d))
+            {
+                
+            }
+        }
     }
 
     #endregion
