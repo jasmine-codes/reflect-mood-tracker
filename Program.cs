@@ -248,6 +248,8 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        var list = entries.Where();
     }
 
     #endregion
