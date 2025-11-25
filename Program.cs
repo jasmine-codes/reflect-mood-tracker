@@ -240,6 +240,14 @@ class Program
     {
         Console.Write("Enter tag to search: ");
         var tag = Console.ReadLine()?.Trim();
+
+        if (string.IsNullOrWhiteSpace(tag))
+        {
+            Console.WriteLine("No tag entered.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
