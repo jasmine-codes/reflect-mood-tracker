@@ -238,7 +238,8 @@ class Program
 
     static void ViewByTag()
     {
-        
+        Console.Write("Enter tag to search: ");
+        var tag = Console.ReadLine()?.Trim();
     }
 
     #endregion
