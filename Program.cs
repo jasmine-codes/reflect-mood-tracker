@@ -249,7 +249,7 @@ class Program
             return;
         }
 
-        var list = entries.Where();
+        var list = entries.Where(e => e.Tags.Any(t => string.Equals()));
     }
 
     #endregion
