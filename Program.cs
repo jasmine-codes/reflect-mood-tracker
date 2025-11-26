@@ -249,7 +249,7 @@ class Program
             return;
         }
 
-        var list = entries.Where(e => e.Tags.Any(t => string.Equals()));
+        var list = entries.Where(e => e.Tags.Any(t => string.Equals(t, tag, StringComparison.OrdinalIgnoreCase))).OrderByDescending(e => e.Date).ToList();
     }
 
     #endregion
