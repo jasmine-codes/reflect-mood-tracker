@@ -250,6 +250,9 @@ class Program
         }
 
         var list = entries.Where(e => e.Tags.Any(t => string.Equals(t, tag, StringComparison.OrdinalIgnoreCase))).OrderByDescending(e => e.Date).ToList();
+        PrintEntriesList(list);
+        Console.WriteLine();
+        Console.ReadLine();
     }
 
     #endregion
