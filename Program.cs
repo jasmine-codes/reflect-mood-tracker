@@ -269,6 +269,13 @@ class Program
 
         Console.Write("Enter the index number of the entry to edit: ");
         var s = Console.ReadLine()?;
+        if (!int.TryParse(s, out int index) || index <= 0)
+        {
+            Console.WriteLine("Invalid index.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
