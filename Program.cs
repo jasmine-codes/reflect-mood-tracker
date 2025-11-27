@@ -255,5 +255,16 @@ class Program
         Console.ReadLine();
     }
 
+    static void EditEntry()
+    {
+        if (!entries.Any())
+        {
+            Console.WriteLine("No entries to edit.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
+    }
+
     #endregion
 }
