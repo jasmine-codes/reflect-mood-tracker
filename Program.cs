@@ -264,6 +264,11 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        ViewAllEntries();
+
+        Console.Write("Enter the index number of the entry to edit: ");
+        var s = Console.ReadLine()?;
     }
 
     #endregion
