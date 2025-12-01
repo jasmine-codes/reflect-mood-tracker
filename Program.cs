@@ -287,6 +287,10 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        var entry = sorted[index - 1];
+
+        //continue here - 
     }
 
     #endregion
