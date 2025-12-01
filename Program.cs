@@ -48,14 +48,14 @@ class Program
             switch (input)
             {
                 case "1": AddEntry(); break;
-                case "2": ViewAllEntries(); break;
-                case "3": ViewByDate(); break;
-                case "4": ViewByTag(); break;
-                case "5": EditEntry(); break;
-                case "6": DeleteEntry(); break;
-                case "7": ShowStats(); break;
-                case "8": ExportEntries(); break;
-                case "9": ResetStorage(); break;
+                // case "2": ViewAllEntries(); break;
+                // case "3": ViewByDate(); break;
+                // case "4": ViewByTag(); break;
+                // case "5": EditEntry(); break;
+                // case "6": DeleteEntry(); break;
+                // case "7": ShowStats(); break;
+                // case "8": ExportEntries(); break;
+                // case "9": ResetStorage(); break;
                 case "0": SaveEntries(); Console.WriteLine("Saved. Bye!"); return;
                 default: Console.WriteLine("Invalid choice."); break;
             }
@@ -86,7 +86,7 @@ class Program
     {
         try
         {
-            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { writeIndented = true });
+            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
         }
         catch (Exception ex)
@@ -123,7 +123,7 @@ class Program
 
         //Date - optional
         Console.Write($"Date YYYY-MM-DD [default {DateTime.Today:YYYY-MM-DD}]: ");
-        var dateInput = Console.ReadLine() ?;
+        string? dateInput = Console.ReadLine();
 
         if (!string.IsNullOrWhiteSpace(dateInput))
         {
@@ -141,7 +141,7 @@ class Program
         while (true)
         {
             Console.Write("Mood (1-10): ");
-            var moodInput = Console.ReadLine() ?;
+            string? moodInput = Console.ReadLine();
 
             if (int.TryParse(moodInput, out int mood) && mood >= 1 && mood <= 10)
             {
@@ -158,11 +158,11 @@ class Program
 
         //Notes
         Console.Write("Notes (you can hit Enter to skip): ");
-        e.Notes = Console.Readline() ?? "";
+        e.Notes = Console.ReadLine() ?? "";
 
         //Tags
         Console.Write("Tags (comma separated, optional): ");
-        var tags = Console.ReadLine() ?;
+        string? tags = Console.ReadLine();
 
         if (!string.IsNullOrWhiteSpace(tags)) e.Tags = tags.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
 
@@ -190,7 +190,7 @@ class Program
     static void ViewByDate()
     {
         Console.Write("Enter date (YYYY-MM-DD) or range (YYYY-MM-DD to YYYY-MM-DD): ");
-        var s = Console.ReadLine()?;
+        string? s = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(s))
         {
@@ -268,7 +268,7 @@ class Program
         ViewAllEntries();
 
         Console.Write("Enter the index number of the entry to edit: ");
-        var s = Console.ReadLine()?;
+        string? s = Console.ReadLine();
         if (!int.TryParse(s, out int index) || index <= 0)
         {
             Console.WriteLine("Invalid index.");
