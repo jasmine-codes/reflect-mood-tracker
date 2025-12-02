@@ -290,10 +290,16 @@ class Program
 
         var entry = sorted[index - 1];
 
+        //edit date
         Console.WriteLine($"Editing entry: {entry.Title} ({entry.Date:yyyy-MM-dd})");
         Console.Write($"New date [current {entry.Date:yyyy-MM-dd}] (Enter to keep): ");
         string? dateInput = Console.ReadLine();
         if (!string.IsNullOrWhiteSpace(dateInput) && DateTime.TryParse(dateInput, out DateTime newDate)) entry.Date = newDate.Date;
+
+        //edit mood
+        Console.Write($"New mood [current {entry.Mood}] (1-10): ");
+        string? moodInput = Console.ReadLine();
+        
     }
 
     #endregion
