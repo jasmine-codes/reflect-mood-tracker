@@ -290,7 +290,7 @@ class Program
 
         var entry = sorted[index - 1];
 
-        //continue here - 
+        Console.WriteLine($"Editing entry: {entry.Title} ({entry.Date:yyyy-mm-dd})");
     }
 
     #endregion
