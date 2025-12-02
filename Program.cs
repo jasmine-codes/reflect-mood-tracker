@@ -299,7 +299,7 @@ class Program
         //edit mood
         Console.Write($"New mood [current {entry.Mood}] (1-10): ");
         string? moodInput = Console.ReadLine();
-        
+        if (!string.IsNullOrWhiteSpace(moodInput) && int.TryParse(moodInput, out int newMood) && newMood >= 1 && newMood <= 10) entry.Mood = newMood;
     }
 
     #endregion
