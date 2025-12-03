@@ -303,6 +303,8 @@ class Program
 
         //edit title
         Console.Write($"New title [current '{entry.Title}'] Enter to keep: ");
+        string? titleInput = Console.ReadLine();
+         if (!string.IsNullOrWhiteSpace(titleInput)) entry.Title = titleInput;
     }
 
     #endregion
