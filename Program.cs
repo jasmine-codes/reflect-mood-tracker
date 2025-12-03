@@ -305,6 +305,11 @@ class Program
         Console.Write($"New title [current '{entry.Title}'] Enter to keep: ");
         string? titleInput = Console.ReadLine();
          if (!string.IsNullOrWhiteSpace(titleInput)) entry.Title = titleInput;
+
+         //edit notes
+         Console.Write("New notes (Enter to keep): ");
+         string? notesInput = Console.ReadLine();
+         if (!string.IsNullOrWhiteSpace(notesInput)) entry.Notes = notesInput;
     }
 
     #endregion
