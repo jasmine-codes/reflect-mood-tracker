@@ -314,7 +314,7 @@ class Program
          //edit tags
          Console.Write($"New tags (comma separated) [current {string.Join(", ", entry.Tags)}] (Enter to keep): ");
          string? tagsInput = Console.ReadLine();
-         
+         if (!string.IsNullOrWhiteSpace(tagsInput)) entry.Tags = tagsInput.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
     }
 
     #endregion
