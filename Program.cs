@@ -313,6 +313,8 @@ class Program
 
          //edit tags
          Console.Write($"New tags (comma separated) [current {string.Join(", ", entry.Tags)}] (Enter to keep): ");
+         string? tagsInput = Console.ReadLine();
+         
     }
 
     #endregion
