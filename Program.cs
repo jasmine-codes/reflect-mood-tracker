@@ -310,6 +310,9 @@ class Program
          Console.Write("New notes (Enter to keep): ");
          string? notesInput = Console.ReadLine();
          if (!string.IsNullOrWhiteSpace(notesInput)) entry.Notes = notesInput;
+
+         //edit tags
+         Console.Write($"New tags (comma separated) [current {string.Join(", ", entry.Tags)}] (Enter to keep): ");
     }
 
     #endregion
