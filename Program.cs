@@ -318,6 +318,7 @@ class Program
 
          //entry is reference to object in entries list (we are using sorted list) - ensure update by finding original by Id
          var originalIndex = entries.FindIndex(e => e.Id == entry.Id);
+         if (originalIndex >= 0) entries[originalIndex] = entry;
     }
 
     #endregion
