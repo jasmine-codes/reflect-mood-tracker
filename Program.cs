@@ -326,5 +326,16 @@ class Program
          Console.ReadLine();
     }
 
+    static void DeleteEntry()
+    {
+        if (!entry.Any())
+        {
+            Console.WriteLine("No entries to delete.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
+    }
+
     #endregion
 }
