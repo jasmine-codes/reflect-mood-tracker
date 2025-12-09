@@ -335,6 +335,18 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        ViewAllEntries();
+        Console.Write("Enter the index number of the entry to delete: ");
+        string? input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int idx) || idx <= 0)
+        {
+            Console.WriteLine("Invalid index.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
