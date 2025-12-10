@@ -360,6 +360,12 @@ class Program
         var entry = sorted[idx - 1];
 
         Console.Write($"Are you sure you want to delete '{entry.Title}' ({entry.Date:yyy-MM-dd})? (y/n): ");
+        string? confirm = Console.ReadLine().ToLower();
+
+        if (confirm == "y")
+        {
+            entries.RemoveAll(e => e.Id == entry.Id);
+        }
     }
 
     #endregion
