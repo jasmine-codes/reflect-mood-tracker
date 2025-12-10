@@ -365,6 +365,16 @@ class Program
         if (confirm == "y")
         {
             entries.RemoveAll(e => e.Id == entry.Id);
+            SaveEntries();
+            Console.WriteLine("Entry deleted.");
+            Console.WriteLine();
+            Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("Delete cancelled.");
+            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 
