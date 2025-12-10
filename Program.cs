@@ -349,6 +349,13 @@ class Program
         }
 
         var sorted = entries.OrderByDescending(x => x.Date).ThenByDescending(x => x.Id).ToList();
+        if (idx > sorted.Count)
+        {
+            Console.WriteLine("Index out of range.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
