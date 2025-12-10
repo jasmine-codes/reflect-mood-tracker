@@ -356,6 +356,10 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        var entry = sorted[idx - 1];
+
+        Console.Write($"Are you sure you want to delete '{entry.Title}' ({entry.Date:yyy-MM-dd})? (y/n): ");
     }
 
     #endregion
