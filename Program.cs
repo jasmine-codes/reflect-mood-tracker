@@ -386,6 +386,9 @@ class Program
         if (string.IsNullOrWhiteSpace(fn))
         {
             Console.WriteLine("Invalid filename.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
         }
     }
 
