@@ -390,6 +390,19 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        try
+        {
+            using var sw = new StreamWriter(fn);
+            var sorted = entries.OrderByDescending(e => e.Date).ToList();
+            foreach (var e in sorted)
+            {
+                sw.WriteLine($"Date: {e.Date:yyyy-MM-dd}");
+                sw.WriteLine($"Mood: {e.Mood}");
+                sw.WriteLine($"Title: {e.Title}");
+                sw.WriteLine($"Tags: {string.Join(", ", e.Tags)}");
+            } 
+        }
     }
 
     #endregion
