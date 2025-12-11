@@ -378,5 +378,10 @@ class Program
         }
     }
 
+    static void ExportEntries()
+    {
+        Console.Write("Export filename (e.g. my_export.txt): ");
+    }
+
     #endregion
 }
