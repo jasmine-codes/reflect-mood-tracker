@@ -381,6 +381,12 @@ class Program
     static void ExportEntries()
     {
         Console.Write("Export filename (e.g. my_export.txt): ");
+        string? fn = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(fn))
+        {
+            Console.WriteLine("Invalid filename.");
+        }
     }
 
     #endregion
