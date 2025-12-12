@@ -407,6 +407,10 @@ class Program
             }
             Console.WriteLine($"Exported {sorted.Count} entries to {fn}");
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exported failed: {ex.Message}");
+        }
     }
 
     #endregion
