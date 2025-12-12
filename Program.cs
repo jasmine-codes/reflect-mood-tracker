@@ -404,7 +404,8 @@ class Program
                 sw.WriteLine("Notes:");
                 sw.WriteLine(e.Notes);
                 sw.WriteLine(new string('-', 40) );
-            } 
+            }
+            Console.WriteLine($"Exported {sorted.Count} entries to {fn}");
         }
     }
 
