@@ -401,6 +401,9 @@ class Program
                 sw.WriteLine($"Mood: {e.Mood}");
                 sw.WriteLine($"Title: {e.Title}");
                 sw.WriteLine($"Tags: {string.Join(", ", e.Tags)}");
+                sw.WriteLine("Notes:");
+                sw.WriteLine(e.Notes);
+                sw.WriteLine(new string('-', 40) );
             } 
         }
     }
