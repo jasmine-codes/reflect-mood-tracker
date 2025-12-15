@@ -414,4 +414,13 @@ class Program
     }
 
     #endregion
+
+    #region Helpers & Stats
+
+    static void PrintEntriesList(List<JournalEntry> list)
+    {
+        
+    }
+
+    #endregion
 }
