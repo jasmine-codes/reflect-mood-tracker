@@ -419,7 +419,13 @@ class Program
 
     static void PrintEntriesList(List<JournalEntry> list)
     {
-        
+        if (!list.Any())
+        {
+            Console.WriteLine("No entries found.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
