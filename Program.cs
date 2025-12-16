@@ -430,7 +430,8 @@ class Program
         for (int i = 0; i < list.Count; i++)
         {
             var e = list[i];
-            Console.WriteLine($"{i + 1}) [{e.Date:yyyy-MM-dd}] Mood: {e.Mood} - {e.Title} (Tags: {})");
+            Console.WriteLine($"{i + 1}) [{e.Date:yyyy-MM-dd}] Mood: {e.Mood} - {e.Title} (Tags: {string.Join(", ", e.Tags)})");
+            if (!string.IsNullOrWhiteSpace(e.Notes)) Console.WriteLine($"   {TrimTo()}");
         }
     }
 
