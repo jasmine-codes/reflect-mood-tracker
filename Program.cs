@@ -438,7 +438,9 @@ class Program
 
     static string TrimTo(string s, int len)
     {
+        if (string.IsNullOrEmpty(s)) return "";
 
+        
     }
 
     #endregion
