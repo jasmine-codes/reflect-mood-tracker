@@ -328,7 +328,7 @@ class Program
 
     static void DeleteEntry()
     {
-        if (!entry.Any())
+        if (!entries.Any())
         {
             Console.WriteLine("No entries to delete.");
             Console.WriteLine();
