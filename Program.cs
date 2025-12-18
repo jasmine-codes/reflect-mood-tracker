@@ -443,5 +443,13 @@ class Program
         return s.Substring(0, len - 3) + "...";
     }
 
+    static void ShowStats()
+    {
+        if (!entries.Any())
+        {
+            Console.WriteLine("");
+        }
+    }
+
     #endregion
 }
