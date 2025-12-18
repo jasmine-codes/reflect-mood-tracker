@@ -447,7 +447,10 @@ class Program
     {
         if (!entries.Any())
         {
+            Console.WriteLine("No data for stats.");
             Console.WriteLine("");
+            Console.ReadLine();
+            return;
         }
     }
 
