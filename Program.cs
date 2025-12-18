@@ -440,8 +440,7 @@ class Program
     {
         if (string.IsNullOrEmpty(s)) return "";
         if (s.Length <= len) return s;
-        
-
+        return s.Substring(0, len - 3) + "...";
     }
 
     #endregion
