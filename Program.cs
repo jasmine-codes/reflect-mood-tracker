@@ -452,6 +452,9 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        Console.Write("Enter date range (YYYY-MM-DD to YYYY-MM-DD) or press Enter for last 30 days: ");
+        string? input = Console.ReadLine();
     }
 
     #endregion
