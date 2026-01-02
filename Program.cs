@@ -457,7 +457,15 @@ class Program
         string? r = Console.ReadLine();
 
         DateTime start, end;
-        
+        if (string.IsNullOrWhiteSpace(r))
+        {
+            end = DateTime.Today;
+            start = end.AddDays(-29); //last 30 days
+        }
+        else if (r.Contains("to"))
+        {
+            
+        }
     }
 
     #endregion
