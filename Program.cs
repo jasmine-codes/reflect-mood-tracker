@@ -48,14 +48,14 @@ class Program
             switch (input)
             {
                 case "1": AddEntry(); break;
-                // case "2": ViewAllEntries(); break;
-                // case "3": ViewByDate(); break;
-                // case "4": ViewByTag(); break;
-                // case "5": EditEntry(); break;
-                // case "6": DeleteEntry(); break;
-                // case "7": ShowStats(); break;
-                // case "8": ExportEntries(); break;
-                // case "9": ResetStorage(); break;
+                case "2": ViewAllEntries(); break;
+                case "3": ViewByDate(); break;
+                case "4": ViewByTag(); break;
+                case "5": EditEntry(); break;
+                case "6": DeleteEntry(); break;
+                case "7": ShowStats(); break;
+                case "8": ExportEntries(); break;
+                case "9": ResetStorage(); break;
                 case "0": SaveEntries(); Console.WriteLine("Saved. Bye!"); return;
                 default: Console.WriteLine("Invalid choice."); break;
             }
@@ -454,7 +454,10 @@ class Program
         }
 
         Console.Write("Enter date range (YYYY-MM-DD to YYYY-MM-DD) or press Enter for last 30 days: ");
-        string? input = Console.ReadLine();
+        string? r = Console.ReadLine();
+
+        DateTime start, end;
+        
     }
 
     #endregion
