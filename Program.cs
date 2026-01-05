@@ -465,6 +465,11 @@ class Program
         else if (r.Contains("to"))
         {
             var parts = r.Split("to", StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray();
+
+            if (parts.Length == 2 && DateTime.TryParse(parts[0], out start) && DateTime.TryParse(parts[1], out end))
+            {
+
+            }
         }
     }
 
