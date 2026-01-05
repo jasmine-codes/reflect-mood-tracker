@@ -478,6 +478,13 @@ class Program
                 return;
             }
         }
+        else
+        {
+            Console.WriteLine("Invalid input.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
