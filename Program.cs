@@ -470,6 +470,13 @@ class Program
             {
 
             }
+            else
+            {
+                Console.WriteLine("Invalid range.");
+                Console.WriteLine();
+                Console.ReadLine();
+                return;
+            }
         }
     }
 
