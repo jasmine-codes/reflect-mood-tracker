@@ -464,7 +464,7 @@ class Program
         }
         else if (r.Contains("to"))
         {
-            var parts = r.Split("to", StringSplitOptions.RemoveEmptyEntries);
+            var parts = r.Split("to", StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray();
         }
     }
 
