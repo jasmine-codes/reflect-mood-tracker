@@ -494,6 +494,8 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        double avg = subset.Average(e => e.Mood);
     }
 
     #endregion
