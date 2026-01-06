@@ -496,6 +496,7 @@ class Program
         }
 
         double avg = subset.Average(e => e.Mood);
+        Console.WriteLine($"Entries: {subset.Count} Average mood: {avg:F2}");
     }
 
     #endregion
