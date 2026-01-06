@@ -487,6 +487,13 @@ class Program
         }
 
         var subset = entries.Where(e => e.Date.Date >= start.Date && e.Date.Date <= end.Date).ToList();
+        if (!subset.Any())
+        {
+            Console.WriteLine("No entries in range.");
+            Console.WriteLine();
+            Console.ReadLine();
+            return;
+        }
     }
 
     #endregion
