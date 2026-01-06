@@ -485,6 +485,8 @@ class Program
             Console.ReadLine();
             return;
         }
+
+        var subset = entries.Where(e => e.Date.Date >= start.Date && e.Date.Date <= end.Date).ToList();
     }
 
     #endregion
