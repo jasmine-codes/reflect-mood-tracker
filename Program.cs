@@ -497,6 +497,11 @@ class Program
 
         double avg = subset.Average(e => e.Mood);
         Console.WriteLine($"Entries: {subset.Count} Average mood: {avg:F2}");
+
+        //last 7 day trend
+        var days = Enumerable.Range(0, (end.Date - start.Date).Days + 1)
+        .Select(offset => start.Date.AddDays(offset))
+        .ToList();
     }
 
     #endregion
