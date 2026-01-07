@@ -502,6 +502,8 @@ class Program
         var days = Enumerable.Range(0, (end.Date - start.Date).Days + 1)
         .Select(offset => start.Date.AddDays(offset))
         .ToList();
+
+        Console.WriteLine("\n Mood by day (date: avg mood):");
     }
 
     #endregion
