@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualBasic;
 
 public class JournalEntry
 {
@@ -504,6 +505,10 @@ class Program
         .ToList();
 
         Console.WriteLine("\n Mood by day (date: avg mood):");
+        foreach (var day in days)
+        {
+            var dayEntries = subset.Where(e => e.Date.Date == day).ToList();
+        }
     }
 
     #endregion
