@@ -510,6 +510,7 @@ class Program
             var dayEntries = subset.Where(e => e.Date.Date == day).ToList();
             if (!dayEntries.Any()) continue;
             var dayAvg = dayEntries.Average(e => e.Mood);
+            Console.WriteLine($"{day:yyyy-MM-dd}: {dayAvg:F2} ({dayEntries.Count} entr.)");
         }
     }
 
