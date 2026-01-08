@@ -522,6 +522,12 @@ class Program
             if (!dayEntries.Any())
             {
                 Console.WriteLine($"{day:yyyy-MM-dd}: -");
+                Console.WriteLine();
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine($"{day:yyyy-MM-dd}: {dayEntries.Average(e => e.Mood):F2}");
             }
 
         }
