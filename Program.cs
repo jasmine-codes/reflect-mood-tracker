@@ -512,7 +512,10 @@ class Program
             var dayAvg = dayEntries.Average(e => e.Mood);
             Console.WriteLine($"{day:yyyy-MM-dd}: {dayAvg:F2} ({dayEntries.Count} entr.)");
         }
+
+        // last 7-day sparkline summary
+        var last7 = Enumerable.Range(0, 7).Select(d => DateTime.Today.AddDays(-d));
     }
 
     #endregion
-}
+} 
