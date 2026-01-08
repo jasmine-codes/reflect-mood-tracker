@@ -518,7 +518,12 @@ class Program
         Console.WriteLine("\n Last 7 days (date: avg mood):");
         foreach (var day in last7)
         {
-            var dayEntries = entries.Where(e => e.Date.Date == day.Date);
+            var dayEntries = entries.Where(e => e.Date.Date == day.Date).ToList();
+            if (!dayEntries.Any())
+            {
+                Console.WriteLine($"{day:yyyy-MM-dd}: -");
+            }
+
         }
     }
 
