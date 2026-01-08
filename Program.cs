@@ -516,6 +516,10 @@ class Program
         // last 7-day sparkline summary
         var last7 = Enumerable.Range(0, 7).Select(d => DateTime.Today.AddDays(-d)).Reverse().ToList();
         Console.WriteLine("\n Last 7 days (date: avg mood):");
+        foreach (var day in last7)
+        {
+            var dayEntries = entries.Where(e => e.Date.Date == day.Date);
+        }
     }
 
     #endregion
