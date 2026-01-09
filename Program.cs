@@ -30,6 +30,7 @@ class Program
 
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("Main Menu:");
             Console.WriteLine("1) Add Entry");
             Console.WriteLine("2)View Entries");

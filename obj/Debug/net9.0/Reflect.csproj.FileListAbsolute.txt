@@ -3,3 +3,13 @@
 /Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.AssemblyInfo.cs
 /Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.csproj.CoreCompileInputs.cache
 /Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.sourcelink.json
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/bin/Debug/net9.0/Reflect
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/bin/Debug/net9.0/Reflect.deps.json
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/bin/Debug/net9.0/Reflect.runtimeconfig.json
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/bin/Debug/net9.0/Reflect.dll
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/bin/Debug/net9.0/Reflect.pdb
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.dll
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/refint/Reflect.dll
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.pdb
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/Reflect.genruntimeconfig.cache
+/Users/jasminelee/Documents/Code/CsharpProjects/Reflect/obj/Debug/net9.0/ref/Reflect.dll
