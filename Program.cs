@@ -23,14 +23,12 @@ class Program
 
     static void Main()
     {
-        Console.Clear();
-        entries = LoadEntries();
-        Console.WriteLine("Welcome to Reflect - Mood Journal");
-        Console.WriteLine();
-
         while (true)
         {
             Console.Clear();
+            entries = LoadEntries();
+            Console.WriteLine("Welcome to Reflect - Mood Journal");
+            Console.WriteLine();
             Console.WriteLine("Main Menu:");
             Console.WriteLine("1) Add Entry");
             Console.WriteLine("2)View Entries");
@@ -306,26 +304,26 @@ class Program
         //edit title
         Console.Write($"New title [current '{entry.Title}'] Enter to keep: ");
         string? titleInput = Console.ReadLine();
-         if (!string.IsNullOrWhiteSpace(titleInput)) entry.Title = titleInput;
+        if (!string.IsNullOrWhiteSpace(titleInput)) entry.Title = titleInput;
 
-         //edit notes
-         Console.Write("New notes (Enter to keep): ");
-         string? notesInput = Console.ReadLine();
-         if (!string.IsNullOrWhiteSpace(notesInput)) entry.Notes = notesInput;
+        //edit notes
+        Console.Write("New notes (Enter to keep): ");
+        string? notesInput = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(notesInput)) entry.Notes = notesInput;
 
-         //edit tags
-         Console.Write($"New tags (comma separated) [current {string.Join(", ", entry.Tags)}] (Enter to keep): ");
-         string? tagsInput = Console.ReadLine();
-         if (!string.IsNullOrWhiteSpace(tagsInput)) entry.Tags = tagsInput.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
+        //edit tags
+        Console.Write($"New tags (comma separated) [current {string.Join(", ", entry.Tags)}] (Enter to keep): ");
+        string? tagsInput = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(tagsInput)) entry.Tags = tagsInput.Split(',').Select(t => t.Trim()).Where(t => t.Length > 0).ToList();
 
-         //entry is reference to object in entries list (we are using sorted list) - ensure update by finding original by Id
-         var originalIndex = entries.FindIndex(e => e.Id == entry.Id);
-         if (originalIndex >= 0) entries[originalIndex] = entry;
+        //entry is reference to object in entries list (we are using sorted list) - ensure update by finding original by Id
+        var originalIndex = entries.FindIndex(e => e.Id == entry.Id);
+        if (originalIndex >= 0) entries[originalIndex] = entry;
 
-         SaveEntries();
-         Console.WriteLine("Entry updated.");
-         Console.WriteLine();
-         Console.ReadLine();
+        SaveEntries();
+        Console.WriteLine("Entry updated.");
+        Console.WriteLine();
+        Console.ReadLine();
     }
 
     static void DeleteEntry()
@@ -405,7 +403,7 @@ class Program
                 sw.WriteLine($"Tags: {string.Join(", ", e.Tags)}");
                 sw.WriteLine("Notes:");
                 sw.WriteLine(e.Notes);
-                sw.WriteLine(new string('-', 40) );
+                sw.WriteLine(new string('-', 40));
             }
             Console.WriteLine($"Exported {sorted.Count} entries to {fn}");
         }
@@ -535,4 +533,4 @@ class Program
     }
 
     #endregion
-} 
+}
