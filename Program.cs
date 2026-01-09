@@ -106,10 +106,12 @@ class Program
             if (File.Exists(filePath)) File.Delete(filePath);
             entries.Clear();
             Console.WriteLine("All entries deleted.");
+            Console.ReadLine();
         }
         else
         {
             Console.WriteLine("Reset cancelled.");
+            Console.ReadLine();
         }
     }
 
