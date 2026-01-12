@@ -1,16 +1,12 @@
 [
   {
     "Id": "a1c76539-f42f-401a-842f-1464374b0c56",
-    "Date": "2026-01-01T00:00:00",
-    "Mood": 9,
-    "Title": "new year",
-    "Notes": "fresh start",
+    "Date": "2026-01-02T00:00:00",
+    "Mood": 10,
+    "Title": "amazing new year",
+    "Notes": "goal setting",
     "Tags": [
-      "goals",
-      "work",
-      "pole dance",
-      "mindfulness",
-      "healthy eating"
+      "routine"
     ]
   }
 ]
