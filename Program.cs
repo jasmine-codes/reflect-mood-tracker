@@ -198,7 +198,6 @@ class Program
         if (string.IsNullOrWhiteSpace(s))
         {
             Console.WriteLine("Nothing entered.");
-            Console.WriteLine();
             Console.ReadLine();
             return;
         }
@@ -217,7 +216,6 @@ class Program
             }
 
             Console.WriteLine("Invalid range format.");
-            Console.WriteLine();
             Console.ReadLine();
             return;
         }
@@ -233,7 +231,6 @@ class Program
             }
 
             Console.WriteLine("Invalid date format.");
-            Console.WriteLine();
             Console.ReadLine();
             return;
         }
@@ -425,8 +422,6 @@ class Program
         if (!list.Any())
         {
             Console.WriteLine("No entries found.");
-            Console.WriteLine();
-            Console.ReadLine();
             return;
         }
 
